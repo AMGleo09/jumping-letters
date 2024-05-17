@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, blue,red);
+}
+    .letters{
+        perspective: 100px;
+        font-family: cursive;
+        color: ghostwhite;
+    }
+
+    .letters span{
+        font-size: 10rem;
+        display: inline-block;
+        line-height: 0.8;
+    }
+    
+    .letters span:hover{
+        cursor: pointer;
+    }
+
+    .letters span.active{
+        animation: jump 2s ease-in-out;
+        transform-origin: bottom left;
+    }
+
+
+    @keyframes jump{
+        0%{
+            transform:  translate(0,0) rotate(180deg);
+        }
+        25%{
+            transform:   scale(2) translate(0,-150px) ;
+        }
+        75%{
+            transform:  translate(1.1,1.1) translate(0,200px);
+        }
+        100%{
+            transform:  translate(0,0) rotate(360deg);
+        }
+    }
